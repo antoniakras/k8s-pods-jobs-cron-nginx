@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: taskpod
+spec:
+  containers:
+  - name: taskcontainer
+    image: nginx:1.23.3-alpine
+    ports:
+    - containerPort: 80
