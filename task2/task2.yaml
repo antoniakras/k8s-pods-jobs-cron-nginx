@@ -1,0 +1,41 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: website-script
+data:
+  website-script.sh: |
+    #!/bin/sh
+    apt-get update
+    apt-get install -y git 
+    apt-get install -y make
+    apt-get install -y curl
+    curl -L https://github.com/gohugoio/hugo/releases/download/v0.123.4/hugo_extended_0.123.4_macOS-64bit.tar.gz -o hugo.tar.gz
+    tar -zxvf hugo.tar.gz
+    mv hugo /usr/local/bin/hugo
+    git clone https://github.com/chazapis/hy548.git
+    cd hy548
+    git submodule init 
+    git submodule update
+    make 
+
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: website-build
+spec:
+  template:
+    spec:
+      containers:
+      - name: website-builder
+        image: arm64v8/ubuntu:20.04
+        command: ["/bin/sh", "-c", "/config/website-script.sh"]
+        volumeMounts:
+        - name: script-volume
+          mountPath: "/config"
+      restartPolicy: OnFailure
+      volumes:
+      - name: script-volume
+        configMap:
+          name: website-script
+  backoffLimit: 4
