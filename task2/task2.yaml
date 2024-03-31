@@ -38,4 +38,4 @@ spec:
       - name: script-volume
         configMap:
           name: website-script
-  backoffLimit: 4
+
