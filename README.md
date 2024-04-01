@@ -89,6 +89,16 @@ localhost 8080:
 
 ### Task 4
 
+The yaml is the same as the previous task with some additions. The nginx-deployment is defined and sets up three replicas of the Nginx container.
+The init container waits until port 8080 is available on localhost before starting the main Nginx containers.
+The nginx-service service to exposes the nginx deployment within the Kubernetes cluster.
+
+![1](task4/1.png)
+![1](task4/2.png)
+![1](task4/dashboard.png)
+
+
+
 
 
 
