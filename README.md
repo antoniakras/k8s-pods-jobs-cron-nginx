@@ -82,7 +82,7 @@ website-build logs:
 
 website-refresh logs:
 
-![1](task3/refresh_log.png)
+![1](task3/refresh_logs.png)
 
 localhost 8080:
 ![1](task3/localhost.png)
