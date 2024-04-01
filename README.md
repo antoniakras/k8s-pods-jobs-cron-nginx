@@ -67,4 +67,30 @@ The commands kubectl get pods and kubectl get jobs were executed to make sure ev
 
 ### Task 3
 
+The data is communicated between containers using the config maps and volumes. This allows task coordination and execution of the scripts website-script.sh and refresh.sh by the containers. The script-volume volume is defined and mounted into the containers by using the volumeMounts field. This volume is associated with the website-script config map, giving permission to the containers to access website-script.sh script. The contents of the website-script.sh script are accessible to the containers at the mount path /config since the script-volume volume is configured to use the website-script ConfigMap. The containers: taskcontainer, website-build, and refresh can communicate using the shared volume. By adding the script-volume volume the website-build and refresh they can access the website-script.sh and refresh.sh scripts. 
+
+
+![1](task3/1.png)
+
+screenshot from minikube dashboard to make sure the cronjob is running smoothly:
+
+![1](task3/cronjob.png)
+
+website-build logs:
+
+![1](task3/website-build_logs.png)
+
+website-refresh logs:
+
+![1](task3/refresh_log.png)
+
+localhost 8080:
+![1](task3/localhost.png)
+
+### Task 4
+
+
+
+
+
 
