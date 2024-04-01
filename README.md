@@ -54,4 +54,17 @@ Stopping the pod and removing the yaml file with the command : kubectl delete -f
 
  ![1](task1/1_f.png)
 
+### Task 2
+
+The config map named website-script builds the script that installs the appropriate dependencies like git, make and curl downloads hugo and clones
+the github repository. The job that runs on the ubuntu container mounts the config map and executes the command  ["/bin/sh", "-c", "bash /config/website-script.sh"] runs the script and builds the website.
+
+The commands kubectl get pods and kubectl get jobs were executed to make sure everything was running smoothly. And minikube dashboard displays the memory and CPU usage of the pod.
+
+![1](task2/terminal.png)
+
+![1](task2/dashboard.png)
+
+### Task 3
+
 
