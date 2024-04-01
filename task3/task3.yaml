@@ -102,5 +102,5 @@ spec:
           - name: config-volume
             configMap:
               name: refresh-script
-          - name: website-volume  # Define the missing volume here
+          - name: website-volume  
             emptyDir: {}
