@@ -1,5 +1,8 @@
-# Assignment 2
+# Project Overview
 ---------------------
+
+Deployed and managed applications on Kubernetes using Pods, Jobs, CronJobs, and Ingress controllers. Built custom Docker images and configured multi-service deployments with persistent volumes. Implemented site mirroring with automated nightly refreshes and routed multiple services via Nginx Ingress.
+
 ## csd4140 | Antonia Krasoudaki
 
 
